@@ -1,0 +1,34 @@
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.game{
+    background: rgb(231,104,153);
+    background: linear-gradient(90deg, rgba(231,104,153,1) 0%, rgba(181,236,241,1) 51%, rgba(231,146,225,1) 93%);
+    width: 100vw;
+    height: 100vh;
+}
+
+.start-game{
+font-size: 50px;
+text-align: center;
+background-color: rgb(218, 169, 226);
+width: 500px;
+border: 3px solid rgb(191, 28, 129);
+position: absolute;
+
+left: 50%;
+transform: translate(-50%);
+top: 45%;
+transform: translate(-50%);
+padding: 10px;
+}
+
+.start-game:hover{
+    background-color: rgb(193, 101, 207);
+    cursor: pointer;
+}
