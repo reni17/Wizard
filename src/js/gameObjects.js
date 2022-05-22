@@ -15,8 +15,8 @@ export function initGameObjects(){
             wizard.style.width = initState.width + "px"
             wizard.style.height = initState.height + "px"
 
-            wizard.style.left = initState.startX + "px"
-            wizard.style.top = initState.startY + "px"
+            wizard.style.left = initState.posX + "px"
+            wizard.style.top = initState.posY + "px"
 
             this.wizard = wizard
             gameScreen.appendChild(wizard)

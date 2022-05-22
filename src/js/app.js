@@ -16,7 +16,7 @@ document.addEventListener('keydown', (e)=> {
 
 document.addEventListener('keyup', (e)=> {
     if(availableKeys.includes(e.code)){
-        initState.keys[e.code] = false 
+        state.keys[e.code] = false 
      }
     })
 
