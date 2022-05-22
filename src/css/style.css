@@ -43,3 +43,11 @@ padding: 10px;
     height: 100%;
     background-color: aquamarine;
 }
+
+.game-score{
+    text-align: center;
+    height: 50px;
+    background-color: black;
+    color: antiquewhite;
+    font-size: 30px;
+}
