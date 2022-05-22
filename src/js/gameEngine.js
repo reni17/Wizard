@@ -5,7 +5,7 @@ window.requestAnimationFrame(gameLoop.bind(null, state, game))
 }
 
 export function gameLoop(state, game){
-    console.log(state.player);
+    console.log(state.keys);
     window.requestAnimationFrame(gameLoop.bind(null, state, game))
 }
 

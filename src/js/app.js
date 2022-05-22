@@ -2,6 +2,24 @@ import { initGameObjects } from "./gameObjects.js"
 import {gameLoop, start} from "./gameEngine.js"
 import {initState} from './gameState.js'
 
+
+const availableKeys = [
+    'KeyA', 'KeyD', 'KeyS', 'KeyW'
+]
+
+document.addEventListener('keydown', (e)=> {
+    if(availableKeys.includes(e.code)){
+       state.keys[e.code] = true 
+    }
+
+})
+
+document.addEventListener('keyup', (e)=> {
+    if(availableKeys.includes(e.code)){
+        initState.keys[e.code] = false 
+     }
+    })
+
 let game = initGameObjects()
 let state = initState()
 

@@ -6,7 +6,8 @@ export function initState(){
             height: 100,
             startX: 100,
             startY: 100
-        }
+        },
+        keys: []
     }
 
     return state
