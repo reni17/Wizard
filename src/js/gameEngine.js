@@ -7,11 +7,18 @@ window.requestAnimationFrame(timestamp => gameLoop(state, game, timestamp))
 export function gameLoop(state, game, timestamp){
     wizardMoovement(state, game)
 
+//spawnBugs
+
     if(timestamp > state.bugSettings.nextTimestamp){
         game.createBug(state.bugSettings)
         state.bugSettings.nextTimestamp = timestamp + Math.random() * state.bugSettings.maxSpawnInterval
     }
     
+//renderBugs
+document.querySelectorAll('.bug').forEach(el => {
+    let posX = parseInt(el.style.left)
+    el.style.left = posX - state.bugSettings.speed + 'px'
+})
 
     window.requestAnimationFrame(gameLoop.bind(null, state, game))
 }

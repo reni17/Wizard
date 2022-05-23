@@ -17,7 +17,8 @@ let startY = 150
             width: 30,
             height: 30,
             nextTimestamp: 0,
-            maxSpawnInterval: 1500
+            maxSpawnInterval: 1500,
+            speed: 7
         }
     }
 
