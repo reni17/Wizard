@@ -22,7 +22,8 @@ export function gameLoop(state, game, timestamp){
         state.bugSettings.nextTimestamp = timestamp + Math.random() * state.bugSettings.maxSpawnInterval
     }
     
-//renderBugs
+//render Bugs
+
 document.querySelectorAll('.bug').forEach(el => {
     let posX = parseInt(el.style.left)
     if(posX>0){
@@ -31,6 +32,18 @@ document.querySelectorAll('.bug').forEach(el => {
         el.remove()
     }
    
+})
+
+//render firebows
+document.querySelectorAll('.fireball').forEach(el => {
+    
+    let posX = parseInt(el.style.left)
+        if(posX > game.gameScreen.offsetWidth){
+            el.remove()
+        }else{
+            el.style.left = posX + state.fireball.speed + 'px'
+        }
+  
 })
 
     window.requestAnimationFrame(gameLoop.bind(null, state, game))
