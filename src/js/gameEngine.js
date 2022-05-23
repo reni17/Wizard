@@ -5,6 +5,13 @@ window.requestAnimationFrame(gameLoop.bind(null, state, game))
 }
 
 export function gameLoop(state, game){
+    wizardMoovement(state, game)
+    game.createBug(state.bugSettings)
+
+    window.requestAnimationFrame(gameLoop.bind(null, state, game))
+}
+
+function wizardMoovement(state, game){
     if(state.keys.KeyD && state.wizard.posX + state.wizard.width < game.gameScreen.offsetWidth){
         state.wizard.posX += state.wizard.speed
         game.wizard.style.left = state.wizard.posX + 'px' 
@@ -18,8 +25,5 @@ export function gameLoop(state, game){
         state.wizard.posX -= state.wizard.speed
         game.wizard.style.left = state.wizard.posX + 'px' 
     }
-
-    
-    window.requestAnimationFrame(gameLoop.bind(null, state, game))
 }
 

@@ -60,3 +60,10 @@ padding: 10px;
     top: 200px;
     left: 100px;
 }
+
+.bug{
+    position: absolute;
+    background-image: url("/src/images/bug.png");
+    background-size: cover;
+
+}

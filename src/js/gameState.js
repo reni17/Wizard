@@ -12,7 +12,11 @@ let startY = 150
             posY: startY,
             speed: 7
         },
-        keys: []
+        keys: [],
+        bugSettings: {
+            width: 30,
+            height: 30
+        }
     }
 
     return state
