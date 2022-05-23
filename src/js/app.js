@@ -4,7 +4,7 @@ import {initState} from './gameState.js'
 
 
 const availableKeys = [
-    'KeyA', 'KeyD', 'KeyS', 'KeyW'
+    'KeyA', 'KeyD', 'KeyS', 'KeyW', 'Space'
 ]
 
 document.addEventListener('keydown', (e)=> {

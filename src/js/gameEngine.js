@@ -7,6 +7,12 @@ window.requestAnimationFrame(timestamp => gameLoop(state, game, timestamp))
 export function gameLoop(state, game, timestamp){
     wizardMoovement(state, game)
 
+    if(state.keys.Space){
+        game.wizard.style.backgroundImage = 'url("/src/images/wizard-fire.png")'
+    }else{
+        game.wizard.style.backgroundImage = 'url("/src/images/wizard.png")'
+    }
+
 //spawnBugs
 
     if(timestamp > state.bugSettings.nextTimestamp){

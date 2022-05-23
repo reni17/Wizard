@@ -12,7 +12,14 @@ let startY = 150
             posY: startY,
             speed: 7
         },
-        keys: [],
+        keys: { 
+            Space: false,
+            KeyA: false,
+            KeyS: false,
+            KeyD: false,
+            KeyW: false
+
+        },
         bugSettings: {
             width: 30,
             height: 30,

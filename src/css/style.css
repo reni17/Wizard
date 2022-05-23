@@ -54,7 +54,7 @@ padding: 10px;
 
 .wizard{
     position: absolute;
-    background-image: url(/src/images/wizard.png);
+    background-image: url("/src/images/wizard.png");
     width: 82px;
     height: 100px;
     top: 200px;
