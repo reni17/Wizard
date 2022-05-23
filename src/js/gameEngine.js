@@ -5,17 +5,17 @@ window.requestAnimationFrame(gameLoop.bind(null, state, game))
 }
 
 export function gameLoop(state, game){
-    if(state.keys.KeyD){
-        state.wizard.posX += 5
+    if(state.keys.KeyD && state.wizard.posX + state.wizard.width < game.gameScreen.offsetWidth){
+        state.wizard.posX += state.wizard.speed
         game.wizard.style.left = state.wizard.posX + 'px' 
-    }else if(state.keys.KeyS){
-        state.wizard.posY += 5
+    }else if(state.keys.KeyS && state.wizard.posY + state.wizard.height < game.gameScreen.offsetHeight){
+        state.wizard.posY += state.wizard.speed
         game.wizard.style.top = state.wizard.posY + 'px'
-    }else if(state.keys.KeyW){
-        state.wizard.posY -= 5
+    }else if(state.keys.KeyW && state.wizard.posY > 50){
+        state.wizard.posY -= state.wizard.speed
         game.wizard.style.top = state.wizard.posY + 'px'
-    }else if(state.keys.KeyA){
-        state.wizard.posX -= 5
+    }else if(state.keys.KeyA && state.wizard.posX > 0){
+        state.wizard.posX -= state.wizard.speed
         game.wizard.style.left = state.wizard.posX + 'px' 
     }
 

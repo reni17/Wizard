@@ -2,7 +2,7 @@ export function initGameObjects(){
     const startScreen = document.querySelector('.start-game');
     const gameScreen = document.querySelector('.game-screen');
     const gameScore = document.querySelector('.game-score');
-    const wizard = document.querySelector('.wizard')
+    
 
     return {
         startScreen,
