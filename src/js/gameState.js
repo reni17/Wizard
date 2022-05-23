@@ -15,7 +15,9 @@ let startY = 150
         keys: [],
         bugSettings: {
             width: 30,
-            height: 30
+            height: 30,
+            nextTimestamp: 0,
+            maxSpawnInterval: 1500
         }
     }
 

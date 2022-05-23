@@ -1,12 +1,17 @@
 export function start(state, game){
 game.createWizard(state.wizard)
 
-window.requestAnimationFrame(gameLoop.bind(null, state, game))
+window.requestAnimationFrame(timestamp => gameLoop(state, game, timestamp))
 }
 
-export function gameLoop(state, game){
+export function gameLoop(state, game, timestamp){
     wizardMoovement(state, game)
-    game.createBug(state.bugSettings)
+
+    if(timestamp > state.bugSettings.nextTimestamp){
+        game.createBug(state.bugSettings)
+        state.bugSettings.nextTimestamp = timestamp + Math.random() * state.bugSettings.maxSpawnInterval
+    }
+    
 
     window.requestAnimationFrame(gameLoop.bind(null, state, game))
 }
