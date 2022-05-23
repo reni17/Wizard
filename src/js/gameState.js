@@ -5,6 +5,7 @@ let startY = 150
 
     const state = {
         player: "Reni",
+        gameOver: false,
         wizard: {
             width: 82,
             height: 100,

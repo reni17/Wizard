@@ -13,6 +13,8 @@ export function gameLoop(state, game, timestamp) {
 
     game.wizard.style.backgroundImage = 'url("/src/images/wizard-fire.png")';
 
+
+    //spawn Fireballs
     if (timestamp > state.fireball.nextTimestamp) {
         game.createFireball(state.wizard, state.fireball);
         state.fireball.nextTimestamp =
@@ -24,7 +26,7 @@ export function gameLoop(state, game, timestamp) {
     game.wizard.style.backgroundImage = 'url("/src/images/wizard.png")';
   }
 
-  //spawnBugs
+  //spawn Bugs
 
   if (timestamp > state.bugSettings.nextTimestamp) {
     game.createBug(state.bugSettings);
@@ -36,6 +38,12 @@ export function gameLoop(state, game, timestamp) {
   let bugElements = document.querySelectorAll('.bug');
   bugElements.forEach((el) => {
     let posX = parseInt(el.style.left);
+
+    if(collision(game.wizard, el)){
+        state.gameOver = true
+    }
+
+
     if (posX > 0) {
       el.style.left = posX - state.bugSettings.speed + 'px';
     } else {
@@ -43,11 +51,11 @@ export function gameLoop(state, game, timestamp) {
     }
   });
 
-  //render firebows
+  //render fireballs
   document.querySelectorAll(".fireball").forEach((fireballEl) => {
     let posX = parseInt(fireballEl.style.left);
 
-    //detect collision
+    //detect collision between bug and fieball
 
     bugElements.forEach((el) => {
       if (collision(el, fireballEl)) {
@@ -62,7 +70,14 @@ export function gameLoop(state, game, timestamp) {
     });
   });
 
-  window.requestAnimationFrame(gameLoop.bind(null, state, game));
+  //detect collision between wizard and bug
+
+  if(state.gameOver){
+      alert('Game over')
+  }else{
+       window.requestAnimationFrame(gameLoop.bind(null, state, game));
+  }
+ 
 }
 
 function wizardMoovement(state, game) {
