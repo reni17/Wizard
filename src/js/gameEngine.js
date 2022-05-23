@@ -17,7 +17,12 @@ export function gameLoop(state, game, timestamp){
 //renderBugs
 document.querySelectorAll('.bug').forEach(el => {
     let posX = parseInt(el.style.left)
-    el.style.left = posX - state.bugSettings.speed + 'px'
+    if(posX>0){
+        el.style.left = posX - state.bugSettings.speed + 'px' 
+    }else{
+        el.remove()
+    }
+   
 })
 
     window.requestAnimationFrame(gameLoop.bind(null, state, game))
