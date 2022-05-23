@@ -10,8 +10,16 @@ export function gameLoop(state, game, timestamp) {
   wizardMoovement(state, game);
 
   if (state.keys.Space) {
+
     game.wizard.style.backgroundImage = 'url("/src/images/wizard-fire.png")';
-    game.createFireball(state.wizard, state.fireball);
+
+    if (timestamp > state.fireball.nextTimestamp) {
+        game.createFireball(state.wizard, state.fireball);
+        state.fireball.nextTimestamp =
+          timestamp + state.fireball.maxSpawnInterval;
+      }
+
+    
   } else {
     game.wizard.style.backgroundImage = 'url("/src/images/wizard.png")';
   }
