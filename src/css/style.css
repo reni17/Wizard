@@ -67,3 +67,9 @@ padding: 10px;
     background-size: cover;
 
 }
+
+.fireball{
+    position: absolute;
+    background-image: url("/src/images/fire-ball.png");
+    background-size: cover;
+}

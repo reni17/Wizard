@@ -21,11 +21,15 @@ let startY = 150
 
         },
         bugSettings: {
-            width: 30,
-            height: 30,
+            width: 40,
+            height: 40,
             nextTimestamp: 0,
             maxSpawnInterval: 1500,
             speed: 7
+        },
+        fireball: {
+            width: 20,
+            height: 20
         }
     }
 

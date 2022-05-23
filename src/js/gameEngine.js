@@ -1,3 +1,4 @@
+
 export function start(state, game){
 game.createWizard(state.wizard)
 
@@ -9,6 +10,7 @@ export function gameLoop(state, game, timestamp){
 
     if(state.keys.Space){
         game.wizard.style.backgroundImage = 'url("/src/images/wizard-fire.png")'
+        game.createFireball(state.wizard, state.fireball)
     }else{
         game.wizard.style.backgroundImage = 'url("/src/images/wizard.png")'
     }

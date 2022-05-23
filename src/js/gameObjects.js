@@ -9,7 +9,7 @@ export function initGameObjects(){
         gameScreen,
         gameScore,
         createWizard(initState){
-            let wizard = document.createElement('div')
+            const wizard = document.createElement('div')
             wizard.classList.add('wizard')
 
             wizard.style.width = initState.width + 'px'
@@ -24,7 +24,7 @@ export function initGameObjects(){
             return wizard
         },
         createBug(state){
-            let bug = document.createElement('div')
+            const bug = document.createElement('div')
             bug.classList.add('bug')
 
             bug.style.width = state.width + 'px'
@@ -35,6 +35,24 @@ export function initGameObjects(){
             bug.style.left = (gameScreen.offsetWidth - state.width) + 'px'
 
             gameScreen.appendChild(bug)
+        },
+        createFireball(wizard, fireball){
+
+            
+            const fireballEl = document.createElement('div')
+            fireballEl.classList.add('fireball')
+
+           
+        
+
+            fireballEl.style.top = wizard.posY + wizard.height/3 + 'px'
+            fireballEl.style.left = wizard.posX + wizard.width + 'px'  
+
+            fireballEl.style.width = fireball.width + 'px'
+            fireballEl.style.height = fireball.height + 'px'
+
+            gameScreen.appendChild(fireballEl)
+
         }
     }
 }
