@@ -74,3 +74,13 @@ padding: 10px;
     background-image: url("/src/images/fire-ball.png");
     background-size: cover;
 }
+
+.game-over{
+    font-size: 70px;
+    margin: auto;
+    width: 350px;
+    height: 100px;
+    background: linear-gradient(90deg, rgba(231,104,153,1) 0%, rgba(181,236,241,1) 51%, rgba(231,146,225,1) 93%);
+    border: rgb(191, 28, 129);
+    border-style: double;
+}

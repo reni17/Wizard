@@ -61,6 +61,10 @@ export function gameLoop(state, game, timestamp) {
       if (collision(el, fireballEl)) {
         el.remove();
         fireballEl.remove();
+       let score = document.getElementById('score')
+      score.textContent =parseInt(score.textContent)+2;
+      
+
       }
       if (posX > game.gameScreen.offsetWidth) {
         fireballEl.remove();
@@ -73,7 +77,8 @@ export function gameLoop(state, game, timestamp) {
   //detect collision between wizard and bug
 
   if(state.gameOver){
-      alert('Game over')
+    const end = document.getElementById('end')
+    end.classList.remove('hidden')
   }else{
        window.requestAnimationFrame(gameLoop.bind(null, state, game));
   }
